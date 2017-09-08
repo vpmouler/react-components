@@ -26,10 +26,18 @@ class GroceryListItems extends React.Component {
     super(props)
   }
 
+  onListItemClick(event) {
+    console.log('gotc clicked');
+  } 
+
   render() {
+
+    // var onListItemClick = (event) => {
+    //   console.log(event);
+    // };
     // have to return a JSX bc have {} here
     return (
-      <li> {this.props.item} </li>
+      <li onClick={this.onListItemClick}> {this.props.item} </li>
       )
   }
 
