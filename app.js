@@ -23,18 +23,29 @@ var GroceryList = (props) => (
 
 class GroceryListItems extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      done: false
+    };
   }
 
-  onListItemClick(event) {
-    console.log('gotc clicked');
+  onListItemClick() {
+    this.setState({
+      done: !this.state.done
+    })
+    // this.state.done = !this.state.done;
   } 
+
 
   render() {
 
     // var onListItemClick = (event) => {
     //   console.log(event);
     // };
+
+    var style = {
+      textDecoration: this.state.done ? 'line-through' : 'none'
+    }
     // have to return a JSX bc have {} here
     return (
       <li onClick={this.onListItemClick}> {this.props.item} </li>
